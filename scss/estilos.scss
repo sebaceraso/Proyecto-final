@@ -1,5 +1,7 @@
 // variable
 $color-bg: #212529;
+$letraprincipal: 'Permanent Marker', cursive;
+$letrasecundaria: 'Ubuntu', sans-serif;
 
 @import "otros/queries";
 
@@ -10,7 +12,6 @@ $menu: (
     border-li: 2px solid #343a40,
 );
 
-
 // mixin
 @mixin flex {
     display: flex;
@@ -20,7 +21,7 @@ $menu: (
 
 // extend
 %letra-contenido {
-    font-family: ;};
+    font-family: sans-serif;};
 
 /*body*/
 body {
@@ -35,14 +36,15 @@ body {
 header {
     grid-area: header;
     background-image: -webkit-linear-gradient(black, yellow);
-    padding: 5px;
     margin: 5px;
+    padding: 5px;
         h1 {
             text-align: center;
             @extend %letra-contenido;
             color: #fff;
             font-weight: bold;
             animation-duration: 3s;
+            font-size: 60px;
         }
 }
 
@@ -62,10 +64,19 @@ nav {
         background-image: map-get($menu, bg-li);
         color: map-get($menu, color-li);
         list-style-type: none;
+        &:hover {
+            transform: rotate(4deg);
+        }
             a {
         text-decoration: none;
         color: #212529;
-        font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+        font-family: $letraprincipal;
+        font-size: 30px;
+        &:hover {
+            color: rgb(155, 155, 2);
+            border-bottom: 1px solid rgb(155, 155, 2);
+            font-size: 35px;
+        }
             }
         }
     }
@@ -85,7 +96,7 @@ main {
    background-size: cover;   
     h2 {
         font-size: 35px;
-        font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+        font-family: $letraprincipal;
         text-align: center;
         color: #adb5bd;
         padding: 5px;
@@ -100,9 +111,25 @@ main {
         margin: 5px;
         line-height: 1.5;
         color: #adb5bd;
+        font-family: $letrasecundaria;
+ 
     }
-}
 
+    ol {
+          li {
+                text-align: justify;
+                font-size: 20px;
+                color: #212529;
+                padding: 5px;
+                margin: 5px;
+                line-height: 1.5;
+                color: #adb5bd;
+                font-family: $letrasecundaria;
+             }
+        }
+
+}
+                    
 /* FORMULARIO */
 main{
  form {
@@ -112,7 +139,11 @@ main{
    padding: 5px;
    margin: 5px;
    line-height: 1.5;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   //font-family: $letrasecundaria;
+   label {
+       font-family: $letrasecundaria;
+       font-size: 20px;
+   }
         div {
             padding: 5px;
             }
@@ -122,7 +153,7 @@ main{
                 padding: 5px;
                 background-color: #adb5bd;
                 border: 2px solid #212529;
-                font-family: Verdana, Geneva, Tahoma, sans-serif;
+                font-family: $letrasecundaria;
                 color: #212529;
              }
             }
@@ -138,9 +169,11 @@ main{
     display: flex;
     justify-content: center;
     align-items: center;  
+    padding: 5px;
+    margin: 5px;
     img {
     height: 90%;
-    width: 90%;
+    width: 95%;
     border: 2px solid #adb5bd;
     margin: 5px;
     padding: 5px;
@@ -159,5 +192,5 @@ footer {
    flex-wrap: wrap;
    text-decoration: none;
    color: #dde1e6;
-   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+   font-family: $letraprincipal;
 }
